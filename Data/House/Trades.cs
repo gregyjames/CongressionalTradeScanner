@@ -51,7 +51,7 @@ public class Trades
         public List<Member> Member { get; set; } 
     }
     
-    public static ILookup<string, List<Member>> trades;
+    public static Dictionary<string, HashSet<Member>> trades = new Dictionary<string, HashSet<Member>>();
     
     static async Task DownloadFileAsync(string url, string outputPath)
     {
@@ -117,7 +117,26 @@ public class Trades
             var str = File.ReadAllText($"{year}FD.xml");
             using StringReader reader = new StringReader(str);
             var test = (FinancialDisclosure)serializer.Deserialize(reader);
-            trades = test.Member.GroupBy(x => x.key).ToLookup(x => x.Key, x => x.ToList());
+            
+            var newTrades = new List<Member>();
+            foreach (var trade in test.Member)
+            {
+                var key = trade.key;
+
+                if (trades.TryGetValue(key, out var lstTrades))
+                {
+                    var exists = lstTrades.Add(trade);
+                    if (exists)
+                    {
+                        newTrades.Add(trade);
+                    }
+                }
+                else
+                {
+                    trades.Add(key, new HashSet<Member>());
+                    trades[key].Add(trade);
+                }
+            }
         }
         catch (Exception ex)
         {

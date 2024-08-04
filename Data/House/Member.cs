@@ -17,10 +17,13 @@ public class Member
     public string Party { get; init; }
     public bool SubCommiteeOnly { get; set; }
 
-    public List<Trades.Member> GetTrades()
+    public HashSet<Trades.Member> GetTrades()
     {
-        var trades = Trades.trades[getTradeKey].FirstOrDefault() ?? new List<Trades.Member>();
-        return trades;
+        var found = Trades.trades.TryGetValue(getTradeKey, out var trades);
+
+        if (found)
+            return trades;
+        return new HashSet<Trades.Member>();
     }
     
     public override string ToString()
