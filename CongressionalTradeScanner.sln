@@ -1,0 +1,16 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CongressionalTradeScanner", "CongressionalTradeScanner.csproj", "{FFE1A8E3-2B92-4C46-8D5F-B674AE97144A}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{FFE1A8E3-2B92-4C46-8D5F-B674AE97144A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FFE1A8E3-2B92-4C46-8D5F-B674AE97144A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FFE1A8E3-2B92-4C46-8D5F-B674AE97144A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FFE1A8E3-2B92-4C46-8D5F-B674AE97144A}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal
