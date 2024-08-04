@@ -43,7 +43,7 @@ public class House
             });
 
             Trades t = new Trades();
-            await t.DownloadTrades(2024);
+            await t.DownloadTrades(DateTime.Now.Year);
         }
         else
         {
