@@ -16,6 +16,12 @@ public class Member
     public string State { get; init; }
     public string Party { get; init; }
     public bool SubCommiteeOnly { get; set; }
+
+    public List<Trades.Member> GetTrades()
+    {
+        var trades = Trades.trades[getTradeKey].FirstOrDefault() ?? new List<Trades.Member>();
+        return trades;
+    }
     
     public override string ToString()
     {
@@ -26,4 +32,7 @@ public class Member
     {
         return $"{First}-{Last}-{State}";
     }
+
+    private string getTradeKey => $"{First}-{Last}";
+
 }

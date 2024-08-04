@@ -20,7 +20,7 @@ public class Congress
         });
     }
 
-    public void Display()
+    public async Task Display()
     {
         Console.WriteLine("Senate");
         foreach (var commitee in _senate.Commitees)
@@ -58,6 +58,11 @@ public class Congress
                 foreach (var member in subcommittee.GetMembers())
                 {
                     Console.WriteLine("\t\t\t" + member.First + " " + member.Last);
+                    var trades = member.GetTrades();
+                    foreach (var trade in trades)
+                    {
+                        Console.WriteLine("\t\t\t\t" + trade.DocID);
+                    }
                 }
             }
         }

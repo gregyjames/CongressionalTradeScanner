@@ -8,6 +8,6 @@ class Program
     {
         var congress = new Congress();
         await congress.Build();
-        congress.Display();
+        await congress.Display();
     }
 }

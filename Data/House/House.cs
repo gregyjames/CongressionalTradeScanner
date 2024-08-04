@@ -42,6 +42,8 @@ public class House
                 Commitees.Add(title, commitee);
             });
 
+            Trades t = new Trades();
+            await t.DownloadTrades(2024);
         }
         else
         {
