@@ -1,3 +1,5 @@
+[![.NET](https://github.com/gregyjames/CongressionalTradeScanner/actions/workflows/dotnet.yml/badge.svg)](https://github.com/gregyjames/CongressionalTradeScanner/actions/workflows/dotnet.yml)
+
 # CongressionalTradeScanner
 
 > Please Mrs. Pelosi just a crumb of Alpha
